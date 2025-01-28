@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلات الصيف</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .description {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid #28a745;
+            text-align: right; 
+            direction: rtl; 
+        }
+        th, td {
+            border: 1px solid #28a745;
+            padding: 8px;
+            text-align: right; 
+            color: #1e272e;
+        }
+        th {
+            background-color: #d3b152;
+            color: white;
+        }
+        h1, h2 {
+            color: #27ae60;
+            text-align: right;
+        }
+        .image-container img {
+            border: 3px solid #e89f33;
+        }
+        a:hover {
+            color: #0984e3;
+        }
+        .contact {
+            text-align: center;
+            color: #2d3436;
+        }
+        #description {
+            width: 150px;
+        }
+        .floating {
+            float: right;
+            margin-left: 10px;
+        }
+        .header-img {
+            width: 50%;
+            height: auto;
+        }
+        .right-aligned {
+            text-align: right;
+        }
+    </style>
+    <script>
+        function showDetails(description, event) {
+            const descElement = document.getElementById('description');
+            descElement.textContent = description;
+            descElement.style.display = 'block';
+            descElement.style.left = event.pageX + 'px';
+            descElement.style.top = event.pageY + 'px';
+        }
+
+        function hideDetails() {
+            const descElement = document.getElementById('description');
+            descElement.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <img src="summer.jpg" alt="الشعار" class="header-img">
+        <h1 id="main-header" style="text-align: right;">رحلات الصيف</h1>
+        <nav style="text-align: right;">
+            <ul>
+                <li><a href="Project.html">الرئيسية</a></li>
+                <li><a href="winter.html">رحلات الشتاء</a></li>
+                <li><a href="summer.html">رحلات الصيف</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>أفضل رحلات الصيف</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>الوجهة</th>
+                    <th>تاريخ الرحلة</th>
+                    <th>سعر الذهاب</th>
+                    <th>سعر الإياب</th>
+                    <th>الصورة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>جزر المالديف</td>
+                    <td>يونيو 2025</td>
+                    <td>750 دولار</td>
+                    <td>750 دولار</td>
+                    <td>
+                        <div class="image-container">
+                            <img src="maldives.jpg" alt="جزر المالديف" width="100" 
+                                 onclick="showDetails('استمتع بشواطئ جزر المالديف الرائعة!', event)">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>إسبانيا</td>
+                    <td>يوليو 2025</td>
+                    <td>650 دولار</td>
+                    <td>650 دولار</td>
+                    <td>
+                        <div class="image-container">
+                            <img src="spain.jpg" alt="إسبانيا" width="100" 
+                                 class="floating" onclick="showDetails('استمتع بالشمس والثقافة الإسبانية!', event)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>اليونان</td>
+                            <td>أغسطس 2025</td>
+                            <td>600 دولار</td>
+                            <td>600 دولار</td>
+                            <td>
+                                <div class="image-container">
+                                    <img src="greece.jpg" alt="اليونان" width="100" 
+                                         onclick="showDetails('اكتشف الجزر اليونانية الجميلة!', event)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>إيطاليا</td>
+                            <td>سبتمبر 2025</td>
+                            <td>700 دولار</td>
+                            <td>700 دولار</td>
+                            <td>
+                                <div class="image-container">
+                                    <img src="Italy.jpg" alt="إيطاليا" width="100" 
+                                         onclick="showDetails('تجربة فريدة في إيطاليا!', event)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>تركيا</td>
+                            <td>أكتوبر 2025</td>
+                            <td>575 دولار</td>
+                            <td>575 دولار</td>
+                            <td>
+                                <div class="image-container">
+                                    <img src="turkiya.jpg" alt="تركيا" width="100" 
+                                         onclick="showDetails( 'متع عينيك بجسر البسفور!' , event)">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <h2>عروض خاصة</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الوجهة</th>
+                            <th>سعر العرض</th>
+                            <th>تفاصيل العرض</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>جزر المالديف</td>
+                            <td>1400 دولار</td>
+                            <td>احجز الآن واحصل على خصم 100 دولار!</td>
+                        </tr>
+                        <tr>
+                            <td>إسبانيا</td>
+                            <td>1200 دولار</td>
+                            <td>إقامة مجانية للأطفال تحت 12 سنة!</td>
+                        </tr>
+                        <tr>
+                            <td>اليونان</td>
+                            <td>1100 دولار</td>
+                            <td>رحلة بحرية مجانية عند الحجز لعائلة مكونة من 4 أفراد!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        
+            <footer>
+                <div class="contact">
+                    <h2 style="text-align: center;">اتصل بنا</h2>
+                    <p>رقم الهاتف: <strong>+0555555555</strong></p>
+                </div>
+                <p class="right-aligned">&copy; 2025 شركة إكتشف وجهتك</p>
+            </footer>
+        
+            <div id="description" class="description" onclick="hideDetails()"></div>
+        </body>
+        </html>
